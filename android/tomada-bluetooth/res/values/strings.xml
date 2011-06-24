@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, tomada!</string>
+    <string name="app_name">Tomada</string>
+    <string name="button_text">Desligar</string>
+    <string name="button_text2">Ligar</string>
+</resources>
