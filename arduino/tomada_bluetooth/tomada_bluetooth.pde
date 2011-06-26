@@ -9,6 +9,7 @@ void setup() {
   digitalWrite(RELAY, LOW);
   Serial.begin(115200);
   meetAndroid.registerFunction(changePower, 'p');
+  meetAndroid.registerFunction(getStatus, 's');
 }
 
 void loop() {
@@ -20,6 +21,15 @@ void changePower(byte flag, byte numOfValues) {
   char data[length];  
   meetAndroid.getString(data);
   digitalWrite(RELAY, !digitalRead(RELAY));
+  if (digitalRead(RELAY) == HIGH) {
+    meetAndroid.send("OFF");
+  }
+  else {
+    meetAndroid.send("ON");
+  }
+}
+
+void getStatus(byte flag, byte numOfValues) {
   if (digitalRead(RELAY) == HIGH) {
     meetAndroid.send("OFF");
   }
