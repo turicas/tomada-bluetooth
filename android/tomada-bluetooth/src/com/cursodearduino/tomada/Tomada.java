@@ -31,6 +31,7 @@ public class Tomada extends Activity implements OnClickListener {
 	String deviceAddress;
 	
 	private Button buttonPower;
+	private TextView connectionFeedback;
 	private TextView arduinoFeedback;
 	
     @Override
@@ -41,7 +42,8 @@ public class Tomada extends Activity implements OnClickListener {
         
         // get references to views defined in our main.xml layout file
         buttonPower = (Button) findViewById(R.id.button);
-        arduinoFeedback = (TextView) findViewById(R.id.arduinofeedback);
+        connectionFeedback = (TextView) findViewById(R.id.connectionfeedback);
+        arduinoFeedback = (TextView) findViewById(R.id.arduinofeedback);        
         
         // registering listener
         buttonPower.setOnClickListener(this);
@@ -118,6 +120,7 @@ public class Tomada extends Activity implements OnClickListener {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
+			connectionFeedback.setText("Connected");
 			verifyTomada();
 		}
 	}
