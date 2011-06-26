@@ -4,6 +4,17 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <TextView 
+		android:id="@+id/connectionfeedback"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+	    android:text="@string/connection_feedback_text"
+    />
 	<Button android:id="@+id/button" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:text="@string/button_text" />
+	<TextView 
+		android:id="@+id/arduinofeedback"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content"
+    />
 </LinearLayout>
